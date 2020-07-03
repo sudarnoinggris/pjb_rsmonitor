@@ -12,7 +12,7 @@ class User_model extends CI_Model
     function get_data()
     {
 
-        $query = $this->db->get('user');
+        $query = $this->db->get('users');
         return $query->result_array();
     }
 
@@ -31,7 +31,7 @@ class User_model extends CI_Model
             'tglbuat' => $this->input->post('tglbuat'),
 
         );
-        $this->db->insert('user', $data);
+        $this->db->insert('users', $data);
     }
 
     public function edit_data()
@@ -49,8 +49,8 @@ class User_model extends CI_Model
             'tglbuat' => $this->input->post('tglbuat'),
 
         );
-        $this->db->where('userid', $this->input->post('userid'));
-        $this->db->update('user', $data);
+        $this->db->where('id', $this->input->post('userid'));
+        $this->db->update('users', $data);
     }
 
 
@@ -61,6 +61,6 @@ class User_model extends CI_Model
     }
     public function getbyid($id)
     {
-        return $this->db->get_where('user', array('userid' => $id))->result_array();
+        return $this->db->get_where('users', array('id' => $id))->result_array();
     }
 }

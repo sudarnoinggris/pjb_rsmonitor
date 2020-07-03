@@ -35,15 +35,16 @@ class Auth extends CI_Controller
     {
         $userid = $this->input->post('userid');
         $password = $this->input->post('password');
-        $user = $this->db->get_where('user', ['userid' => $userid])->row_array();
+        $user = $this->db->get_where('users', ['username' => $userid])->row_array();
         // jika user ada 
         if ($user) {
             //jika user aktif
             if ($user['is_active'] == 1) {
                 //cek password
                 if (MD5($password) == $user['password']) {
-                    $data = ['userid' => $user['userid'], 'name' => $user['name'], 'image' => $user['image'], 'level' => $user['level']];
+                    $data = ['userid' => $user['username'], 'name' => $user['name'], 'image' => $user['image'], 'level' => $user['level']];
                     $this->session->set_userdata($data);
+             
                     redirect('dashboard');
                 } else {
                     $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert"> Password Salah </div>');

@@ -10,15 +10,16 @@
                 <div class="card-body">
 
 
-                    <a href="<?= base_url('user') . '/add'; ?>" class="btn btn-success mb-3"> Add User</a>
+                    <a href="<?= base_url('pasien') . '/add'; ?>" class="btn btn-success mb-3"> Add Tertanggung</a>
                     <table id="dataTable" class="table table-hover table-bordered">
                         <thead class="text-white bg-primary">
                             <tr>
 
-                                <th scope="col">UserID</th>
-                                <th scope="col">Nama</th>
-                                <th scope="col">Level</th>
-                                <th scope="col">Active</th>
+                                <th scope="col">nid</th>
+                                <th scope="col">Nama Tertanggung</th>
+                                <th scope="col">Nama Penanggung</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Distrik</th>
                                 <th scope="col">Foto</th>
                                 <th scope="col">Action</th>
 
@@ -29,14 +30,15 @@
                             <?php //foreach ($user as $data) : ?>
                                 <tr>
 
-                                    <td>username</td>
-                                    <td>Nama</td>
-                                    <td>Level</td>
-                                    <td>Active</td>
+                                    <td>Kode</td>
+                                    <td>Nama A</td>
+                                    <td>Nama B</td>
+                                    <td>Anak</td>
+                                    <td>Distrik</td>
                                     <td>Foto</td>
                                     <td>
-                                        <a href="<?= base_url('user/edit/') ?>" class="btn btn-sm btn-success">edit</a>
-                                        <a href="<?= base_url('user/delete/') ?>" class="btn btn-sm btn-danger" onclick="return confirm('Yakin menghapus data');">delete</a>
+                                        <a href="<?= base_url('pasien/edit/') ?>" class="btn btn-sm btn-success">edit</a>
+                                        <a href="<?= base_url('pasien/delete/') ?>" class="btn btn-sm btn-danger" onclick="return confirm('Yakin menghapus data');">delete</a>
                                     </td>
                                 </tr>
 

@@ -4,9 +4,10 @@
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url('') ?>">
         <div class="sidebar-brand-icon rotate-n-0">
-            <i class="fas fa-store-alt"></i>
+
+        <img class="img-profile" src="<?= base_url('assets/img/logo.png') //. $this->session->userdata('image'); ?>" width=50px height=20px>
         </div>
-        <div class="sidebar-brand-text mx-3">Pajangan Batu Persada</div>
+        <div class="sidebar-brand-text mx-2">Monitoring</div>
     </a>
 
     <!-- Divider -->
@@ -21,106 +22,64 @@
 
     <!-- Divider -->
     <hr class="sidebar-divider">
+       <!-- Heading -->
+    <div class="sidebar-heading">
+        SYSTEM
+    </div>
 
+    <li class="nav-item ">
+        <a class="nav-link" href="<?= base_url('user') ?>">
+            <i class="fas fa-user"></i>
+            <span>Users</span></a>
+    </li>
+    <!-- Divider -->
+    <hr class="sidebar-divider">
     <!-- Heading -->
     <div class="sidebar-heading">
         MASTER DATA
     </div>
-    <li class="nav-item <?php if ($title == 'User') echo 'active'; ?>">
-        <a class="nav-link" href="<?= base_url('user') ?>">
-            <i class="fas fa-user"></i>
-            <span>User</span></a>
+ 
+    <li class="nav-item ">
+        <a class="nav-link" href="<?= base_url('distrik') ?>">
+            <i class="fas fa-industry"></i>
+            <span>Distrik</span></a>
     </li>
-
-    <li class="nav-item <?php if ($title == 'Items') echo 'active'; ?>">
-        <a class="nav-link" href="<?= base_url('items') ?>">
-            <i class="fas fa-box-open"></i>
-            <span>Items</span></a>
+    <li class="nav-item ">
+        <a class="nav-link" href="<?= base_url('pegawai') ?>">
+            <i class="fas fa-users"></i>
+            <span>Pegawai</span></a>
     </li>
-
-    <li class="nav-item <?php if ($title == 'Category') echo 'active'; ?>">
-        <a class="nav-link" href="<?= base_url('category') ?>">
-            <i class="fas fa-layer-group"></i>
-            <span>Category</span></a>
+    <li class="nav-item ">
+        <a class="nav-link" href="<?= base_url('pasien') ?>">
+            <i class="fas fa-user-md"></i>
+            <span>Tertanggung</span></a>
+    </li>   
+    <li class="nav-item ">
+        <a class="nav-link" href="<?= base_url('rs') ?>">
+            <i class="fa fa-hospital"></i>
+            <span>Rumah Sakit</span></a>
     </li>
-    <li class="nav-item <?php if ($title == 'Satuan') echo 'active'; ?>">
-        <a class="nav-link" href="<?= base_url('uom') ?>">
-            <i class="fab fa-itch-io"></i>
-            <span>UOM</span></a>
-    </li>
-    <li class="nav-item <?php if ($title == 'Kontak') echo 'active'; ?>">
-        <a class="nav-link" href="<?= base_url('kontak'); ?>">
-            <i class="fas fa-id-card"></i>
-            <span>Kontak</span></a>
-    </li>
+ 
     <!-- Divider -->
     <hr class="sidebar-divider">
 
     <!-- Heading -->
     <div class="sidebar-heading">
-        TRANSAKSI
+        Monitoring
     </div>
 
     <!-- Nav Item - Pembelian -->
-    <li class="nav-item <?php if ($title == 'Purchase') echo 'active'; ?>">
-        <a class="nav-link" href="<?= base_url('purchase'); ?>">
-            <i class="fas fa-shopping-cart"></i>
-            <span>Purchase</span></a>
+    <li class="nav-item ">
+        <a class="nav-link" href="<?= base_url('validasi'); ?>">
+            <i class="fas fa-medkit"></i>
+            <span>Validasi Pasien</span></a>
     </li>
 
-    <!-- Nav Item - produksi -->
-    <li class="nav-item <?php if ($title == 'Production') echo 'active'; ?>">
-        <a class="nav-link" href="<?= base_url('production'); ?>">
-            <i class="fas fa-industry"></i>
-            <span>Production</span></a>
-    </li>
-
-
-    <!-- Nav Item - sales -->
-    <li class="nav-item <?php if ($title == 'Sales') echo 'active'; ?>">
-        <a class="nav-link" href="<?= base_url('sales'); ?>">
-            <i class="fas fa-money-bill-wave"></i>
-            <span>Sales</span></a>
-    </li>
-
+   
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 
-    <!-- Heading -->
-    <div class="sidebar-heading">
-        LAPORAN
-    </div>
-
-    <!-- Nav Item - Pembelian -->
-    <li class="nav-item <?php if ($title == 'Stock') echo 'active'; ?>">
-        <a class="nav-link" href="<?= base_url('stock'); ?>">
-            <i class="fas fa-shopping-cart"></i>
-            <span>Stock</span></a>
-    </li>
-    <!-- Nav Item - Penjualan -->
-    <li class="nav-item <?php if ($title == 'Laporan Sales') echo 'active'; ?>">
-        <a class="nav-link" href="<?= base_url('lapsales'); ?>">
-            <i class="fas fa-money-bill-wave"></i>
-            <span>Penjualan</span></a>
-    </li>
-    <!-- Divider -->
-    <hr class="sidebar-divider d-none d-md-block">
-    <!-- Nav Item - Charts -->
-    <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-            <i class="fas fa-fw fa-chart-area"></i>
-            <span>Charts</span></a>
-    </li>
-
-    <!-- Nav Item - Tables -->
-    <li class="nav-item">
-        <a class="nav-link" href="tables.html">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Tables</span></a>
-    </li>
-
-    <!-- Divider -->
-    <hr class="sidebar-divider d-none d-md-block">
+   
 
     <!-- Sidebar Toggler (Sidebar) -->
     <div class="text-center d-none d-md-inline">

@@ -6,12 +6,7 @@
                 <h5 class="card-header text-white bg-success"><?= $subtitle ?></h5>
                 <div class="card-body">
 
-                    <form action="" method="post">
-                        <div class="form-group">
-                            <label for="userid">UserID</label>
-                            <input type="text" class="form-control" id="userid" name="userid">
-                            <small class="form-text text-danger"> <?= form_error('userid') ?></small>
-                        </div>
+              
 
                         <div class="form-group">
                             <label for="name">Nama</label>
@@ -19,27 +14,23 @@
                             <small class="form-text text-danger"> <?= form_error('name') ?></small>
                         </div>
                         <div class="form-group">
-                            <label for="password">password</label>
+                            <label for="password">Alamat</label>
                             <input type="text" class="form-control" id="password" name="password">
                             <small class="form-text text-danger"> <?= form_error('password') ?></small>
                         </div>
  
  
                         <div class="form-group">
-                            <label for="level">level</label>
+                            <label for="level">Telp</label>
                             <input type="text" class="form-control" id="level" name="level">
                             <small class="form-text text-danger"> <?= form_error('level') ?></small>
                         </div>
                         <div class="form-group">
-                            <label for="is_active">Status</label>
+                            <label for="is_active">Email</label>
                             <input type="text" class="form-control" id="is_active" name="is_active">
                             <small class="form-text text-danger"> <?= form_error('is_active') ?></small>
                         </div>
-                        <div class="form-group">
-                            <label for="image">Foto</label>
-                            <input type="text" class="form-control" id="image" name="image">
-                            <small class="form-text text-danger"> <?= form_error('image') ?></small>
-                        </div>
+            
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>

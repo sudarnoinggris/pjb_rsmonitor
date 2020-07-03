@@ -1,33 +1,33 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class User extends CI_Controller
+class Pasien extends CI_Controller
 {
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('user_model');
+        $this->load->model('pegawai_model');
         if (!$this->session->userdata('userid')) {
             redirect('auth');
         }
     }
     public function index()
     {
-        $data['title'] = "Users";
+        $data['title'] = "Tertanggung";
 
-        $data['user'] = $this->user_model->get_data();
+        //$data['user'] = $this->user_model->get_data();
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);
-        $this->load->view('user/index', $data);
+        $this->load->view('pasien/index', $data);
         $this->load->view('templates/footer');
     }
 
     public function add()
     {
 
-        $data['title'] = 'User';
-        $data['subtitle'] = 'Add User';
+        $data['title'] = 'Tertanggung';
+        $data['subtitle'] = 'Add Tertanggung';
 
         $this->form_validation->set_rules('userid', 'userid', 'required');
 
@@ -35,7 +35,7 @@ class User extends CI_Controller
             $this->load->view('templates/header', $data);
             $this->load->view('templates/sidebar', $data);
             $this->load->view('templates/topbar', $data);
-            $this->load->view('user/addView', $data);
+            $this->load->view('pasien/addView', $data);
             $this->load->view('templates/footer');
         } else {
 
@@ -46,8 +46,8 @@ class User extends CI_Controller
     }
     function edit($id)
     {
-        $data['title'] = 'User';
-        $data['subtitle'] = 'Edit User';
+        $data['title'] = 'Tertanggung';
+        $data['subtitle'] = 'Edit Tertanggung';
         $data['user'] = $this->user_model->getbyid($id);
 
         $this->form_validation->set_rules('userid', 'userid', 'required');

@@ -10,7 +10,7 @@
     <meta name="author" content="sudarnoinggris@gmail.com">
     <link rel="shortcut icon" href="<?= base_url(); ?>favicon.ico" />
 
-    <title>CV. Pajangan Batu Persana - Login</title>
+    <title>Monitoring RS - Login</title>
 
     <!-- Custom fonts for this template-->
     <link href="<?= base_url('assets/') ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">

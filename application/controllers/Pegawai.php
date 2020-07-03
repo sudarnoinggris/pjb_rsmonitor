@@ -1,33 +1,32 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class User extends CI_Controller
+class Pegawai extends CI_Controller
 {
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('user_model');
+        $this->load->model('pegawai_model');
         if (!$this->session->userdata('userid')) {
             redirect('auth');
         }
     }
     public function index()
     {
-        $data['title'] = "Users";
+        $data['title'] = "Pegawai";
 
-        $data['user'] = $this->user_model->get_data();
+        //$data['user'] = $this->user_model->get_data();
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);
-        $this->load->view('user/index', $data);
+        $this->load->view('pegawai/index', $data);
         $this->load->view('templates/footer');
     }
-
     public function add()
     {
 
-        $data['title'] = 'User';
-        $data['subtitle'] = 'Add User';
+        $data['title'] = 'Pegawai';
+        $data['subtitle'] = 'Add Pegawai';
 
         $this->form_validation->set_rules('userid', 'userid', 'required');
 
@@ -35,7 +34,7 @@ class User extends CI_Controller
             $this->load->view('templates/header', $data);
             $this->load->view('templates/sidebar', $data);
             $this->load->view('templates/topbar', $data);
-            $this->load->view('user/addView', $data);
+            $this->load->view('pegawai/addView', $data);
             $this->load->view('templates/footer');
         } else {
 
@@ -46,8 +45,8 @@ class User extends CI_Controller
     }
     function edit($id)
     {
-        $data['title'] = 'User';
-        $data['subtitle'] = 'Edit User';
+        $data['title'] = 'Pegawai';
+        $data['subtitle'] = 'Edit Pegawai';
         $data['user'] = $this->user_model->getbyid($id);
 
         $this->form_validation->set_rules('userid', 'userid', 'required');
@@ -69,8 +68,9 @@ class User extends CI_Controller
     function delete($id)
     {
         $where = array('id' => rawurldecode($id));
-        $this->user_model->hapus_data('users', $where);
+        $this->user_model->hapus_data('pegawai', $where);
         $this->session->set_flashdata('message', 'Penghapusan userid ' . $id . ' Berhasil');
         redirect('user');
     }
+ 
 }

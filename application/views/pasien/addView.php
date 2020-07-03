@@ -7,11 +7,7 @@
                 <div class="card-body">
 
                     <form action="" method="post">
-                        <div class="form-group">
-                            <label for="userid">UserID</label>
-                            <input type="text" class="form-control" id="userid" name="userid">
-                            <small class="form-text text-danger"> <?= form_error('userid') ?></small>
-                        </div>
+            
 
                         <div class="form-group">
                             <label for="name">Nama</label>
@@ -19,17 +15,13 @@
                             <small class="form-text text-danger"> <?= form_error('name') ?></small>
                         </div>
                         <div class="form-group">
-                            <label for="password">password</label>
+                            <label for="password">Penangung</label>
                             <input type="text" class="form-control" id="password" name="password">
                             <small class="form-text text-danger"> <?= form_error('password') ?></small>
                         </div>
  
  
-                        <div class="form-group">
-                            <label for="level">level</label>
-                            <input type="text" class="form-control" id="level" name="level">
-                            <small class="form-text text-danger"> <?= form_error('level') ?></small>
-                        </div>
+                        
                         <div class="form-group">
                             <label for="is_active">Status</label>
                             <input type="text" class="form-control" id="is_active" name="is_active">

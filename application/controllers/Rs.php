@@ -1,33 +1,33 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class User extends CI_Controller
+class Rs extends CI_Controller
 {
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('user_model');
+        $this->load->model('rs_model');
         if (!$this->session->userdata('userid')) {
             redirect('auth');
         }
     }
     public function index()
     {
-        $data['title'] = "Users";
+        $data['title'] = "Rumah Sakit";
 
-        $data['user'] = $this->user_model->get_data();
+        //$data['user'] = $this->user_model->get_data();
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar', $data);
         $this->load->view('templates/topbar', $data);
-        $this->load->view('user/index', $data);
+        $this->load->view('rs/index', $data);
         $this->load->view('templates/footer');
     }
 
     public function add()
     {
 
-        $data['title'] = 'User';
-        $data['subtitle'] = 'Add User';
+        $data['title'] = 'Tertanggung';
+        $data['subtitle'] = 'Add Tertanggung';
 
         $this->form_validation->set_rules('userid', 'userid', 'required');
 
@@ -35,19 +35,19 @@ class User extends CI_Controller
             $this->load->view('templates/header', $data);
             $this->load->view('templates/sidebar', $data);
             $this->load->view('templates/topbar', $data);
-            $this->load->view('user/addView', $data);
+            $this->load->view('rs/addView', $data);
             $this->load->view('templates/footer');
         } else {
 
             $this->user_model->add_data();
-            $this->session->set_flashdata('message', 'Penambahan user berhasil');
-            redirect('user');
+            $this->session->set_flashdata('message', 'Penambahan tertanggung berhasil');
+            redirect('pasien');
         }
     }
     function edit($id)
     {
-        $data['title'] = 'User';
-        $data['subtitle'] = 'Edit User';
+        $data['title'] = 'Tertanggung';
+        $data['subtitle'] = 'Edit Tertanggung';
         $data['user'] = $this->user_model->getbyid($id);
 
         $this->form_validation->set_rules('userid', 'userid', 'required');
@@ -56,21 +56,21 @@ class User extends CI_Controller
             $this->load->view('templates/header', $data);
             $this->load->view('templates/sidebar', $data);
             $this->load->view('templates/topbar', $data);
-            $this->load->view('user/editView', $data);
+            $this->load->view('rs/editView', $data);
             $this->load->view('templates/footer');
         } else {
 
             $this->user_model->edit_data();
             $this->session->set_flashdata('message', 'Edit Data berhasil');
-            redirect('user');
+            redirect('rs');
         }
     }
 
     function delete($id)
     {
         $where = array('id' => rawurldecode($id));
-        $this->user_model->hapus_data('users', $where);
+        $this->user_model->hapus_data('rs', $where);
         $this->session->set_flashdata('message', 'Penghapusan userid ' . $id . ' Berhasil');
-        redirect('user');
+        redirect('pasrsien');
     }
 }
